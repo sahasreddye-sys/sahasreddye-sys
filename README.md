@@ -15,6 +15,3 @@ High school student in Georgia. I like building things with data and machine lea
 
 Python, pandas, scikit-learn, XGBoost, LightGBM, JavaScript, TypeScript, React/Next.js, Jupyter and Colab.
 
-## Other
-
-I play competitive chess for my school's varsity esports team.
