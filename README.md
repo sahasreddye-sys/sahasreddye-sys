@@ -4,7 +4,7 @@ High school student in Georgia. I like building things with data and machine lea
 
 ## Projects
 
-- **[Forsyth MarketMap](https://github.com/sahasreddye-sys/house-price-evaluation-model)**: home budget planner with LightGBM price estimates and SHAP explanations. [Live](https://sahasreddye-sys.github.io/house-price-evaluation-model/)
+- **[Forsyth MarketMap](https://github.com/sahasreddye-sys/CAC26)**: home budget planner with LightGBM price estimates and SHAP explanations. [Live](https://sahasreddye-sys.github.io/CAC26/)
 - **[IPL Live Predictor](https://github.com/sahasreddye-sys/ipl-predictor-2026)**: predicts IPL matches from live Cricsheet data with a six-model ensemble.
 - **[Weather Intelligence](https://github.com/sahasreddye-sys/weather-prediction-model)**: weather dashboard with a regression model trained in the browser. [Live](https://sahasreddye-sys.github.io/weather-prediction-model/)
 - **[Chess Game Analysis](https://github.com/sahasreddye-sys/chess-game-analysis)**: game review with Stockfish in the browser. [Live](https://sahasreddye-sys.github.io/chess-game-analysis/)
