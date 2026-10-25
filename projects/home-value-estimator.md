@@ -1,6 +1,5 @@
 ---
 layout: default
-embed: true
 title: Home value estimator
 ---
 
@@ -91,13 +90,7 @@ Each home's estimate is broken into per-feature contributions, so the detail pag
 
 ### The app
 
-<div class="embed" data-src="https://sahasreddye-sys.github.io/CAC26/" data-title="Forsyth MarketMap, live app">
-<div class="embed-body">
-<p>The real app runs here, not a recording. It loads only when you press the button.</p>
-<button type="button">Load the live app</button>
-<a href="https://sahasreddye-sys.github.io/CAC26/">Open it in its own tab</a>
-</div>
-</div>
+The live app is [here](https://sahasreddye-sys.github.io/CAC26/). I left it out of this page as an embed because its home list shows street addresses from the county records.
 
 
 ![Search filters and county summary in the app]({{ '/images/housing-app-filters.png' | relative_url }})
