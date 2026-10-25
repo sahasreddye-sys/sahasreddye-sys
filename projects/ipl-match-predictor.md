@@ -3,12 +3,14 @@ layout: default
 title: IPL match predictor
 ---
 
-[Back to projects]({{ '/' | relative_url }})
+[Projects]({{ '/' | relative_url }})
+{: .back}
 
 ## IPL Live Predictor: match outcomes from ball-by-ball data
 
-**Stack:** Python, pandas, scikit-learn, XGBoost, CatBoost, LightGBM, matplotlib. The dashboard is plain HTML, CSS and JavaScript with Chart.js.
-**Code:** [repository](https://github.com/sahasreddye-sys/ipl-predictor-2026) · **Notebook:** `IPL_Final_Predictor_v2.ipynb` (runs in Colab)
+- **Stack:** Python, pandas, scikit-learn, XGBoost, CatBoost, LightGBM, matplotlib. The dashboard is plain HTML, CSS and JavaScript with Chart.js.
+- **Links:** [repository](https://github.com/sahasreddye-sys/ipl-predictor-2026) · notebook `IPL_Final_Predictor_v2.ipynb` (runs in Colab)
+{: .meta}
 
 ### What it is
 
@@ -26,6 +28,12 @@ Version 1 used CSVs I had downloaded by hand. Version 2 replaces them with the C
 
 ![Standings from the live tables]({{ '/images/ipl-app-standings.png' | relative_url }})
 *Standings table in the dashboard, built from the rebuilt points table.*
+
+![Batting first win rate by ground]({{ '/images/ipl-venue-bias.png' | relative_url }})
+*Share of matches won by the team batting first, by ground (historical data). Blue is below 50%, red above. This is the `venue_bat_first_rate` feature.*
+
+![Team strength index]({{ '/images/ipl-team-strength.png' | relative_url }})
+*The 0–10 team strength index from live-season statistics.*
 
 ### Features
 

@@ -3,12 +3,14 @@ layout: default
 title: Credit card fraud detection
 ---
 
-[Back to projects]({{ '/' | relative_url }})
+[Projects]({{ '/' | relative_url }})
+{: .back}
 
 ## Credit card fraud detection: rare-event classification
 
-**Stack:** Python, pandas, LightGBM, XGBoost, CatBoost, scikit-learn, SHAP, Optuna.
-**Code:** [repository](https://github.com/sahasreddye-sys/fraud-detector) · **Notebook:** `fraud_detection.ipynb` (runs in Colab)
+- **Stack:** Python, pandas, LightGBM, XGBoost, CatBoost, scikit-learn, SHAP, Optuna.
+- **Links:** [repository](https://github.com/sahasreddye-sys/fraud-detector) · notebook `fraud_detection.ipynb` (runs in Colab)
+{: .meta}
 
 ### What it is
 
@@ -18,8 +20,16 @@ A fraud classifier on the public Kaggle credit card fraud dataset (European card
 
 284,807 transactions, 492 of them fraud (0.173%). Features are `Time`, `Amount`, and 28 anonymized components `V1`–`V28` (the result of a PCA, so their meaning is not known). I added `Amount_log` and `Hour` (hour of day from `Time`).
 
+<div class="pair" markdown="1">
 ![Class imbalance]({{ '/images/fraud-class-imbalance.png' | relative_url }})
 *Fraud is a tiny share of transactions (log scale).*
+
+![Transaction amount by class]({{ '/images/fraud-amount.png' | relative_url }})
+*Amounts are mostly small for both classes, so amount alone does not separate them.*
+</div>
+
+![Volume and fraud rate by hour of day]({{ '/images/fraud-hour.png' | relative_url }})
+*Volume drops overnight while the fraud rate rises, which is why hour of day is a feature.*
 
 Because of this imbalance, accuracy says nothing: predicting "legit" every time is 99.8% accurate. I use precision-recall AUC (average precision) as the main metric, with ROC-AUC, precision and recall alongside.
 
@@ -42,6 +52,14 @@ LightGBM with 3,000 possible trees, learning rate 0.03, 31 leaves, early stoppin
 
 ![ROC and precision-recall curves]({{ '/images/fraud-roc-pr.png' | relative_url }})
 *ROC and precision-recall curves for the baseline.*
+
+<div class="pair" markdown="1">
+![Confusion matrix at threshold 0.5]({{ '/images/fraud-confusion.png' | relative_url }})
+*Baseline confusion matrix at the default 0.5 cutoff.*
+
+![Optuna optimization history]({{ '/images/fraud-optuna.png' | relative_url }})
+*Validation PR-AUC over 30 tuning trials; the red line is the best so far.*
+</div>
 
 The SHAP summary below shows which features move individual predictions. `V4` and `V14` stand out, and `Hour` also matters. Since the V features are anonymized, the explanation can say which component mattered but not what it means in real terms.
 

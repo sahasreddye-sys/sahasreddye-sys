@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 <head>
-   {% if site.google_analytics %}
-   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', '{{ site.google_analytics }}');
-   </script>
-   {% endif %}
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    {% seo %}
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;650;750&display=swap">
    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+   <link rel="stylesheet" href="{{ "/assets/css/portfolio.css?v=" | append: site.github.build_revision | relative_url }}">
    <!--[if lt IE 9]>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
    <![endif]-->
@@ -23,18 +17,20 @@
 <body>
    <div class="wrapper">
       <header>
-         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+         <h1><a href="{{ "/" | relative_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
          {% if site.logo %}
          <img src="{{site.logo | relative_url}}" alt="Logo" />
          {% endif %}
          <p>{{ site.description | default: site.github.project_tagline }}</p>
-         {% if site.show_downloads %}
-         <ul class="downloads">
-            <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-            <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-            <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-         </ul>
-         {% endif %}
+         <nav class="site-nav" aria-label="Projects">
+            <p>Projects</p>
+            <ul>
+               <li><a href="{{ "/projects/home-value-estimator" | relative_url }}"{% if page.url contains "home-value" %} aria-current="page"{% endif %}>Home value estimator</a></li>
+               <li><a href="{{ "/projects/ipl-match-predictor" | relative_url }}"{% if page.url contains "ipl-match" %} aria-current="page"{% endif %}>IPL match predictor</a></li>
+               <li><a href="{{ "/projects/weather-forecast-model" | relative_url }}"{% if page.url contains "weather-forecast" %} aria-current="page"{% endif %}>Weather forecast model</a></li>
+               <li><a href="{{ "/projects/fraud-detection" | relative_url }}"{% if page.url contains "fraud-detection" %} aria-current="page"{% endif %}>Credit card fraud detection</a></li>
+            </ul>
+         </nav>
       </header>
       <section>
          {{ content }}

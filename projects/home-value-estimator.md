@@ -3,12 +3,14 @@ layout: default
 title: Home value estimator
 ---
 
-[Back to projects]({{ '/' | relative_url }})
+[Projects]({{ '/' | relative_url }})
+{: .back}
 
 ## Forsyth MarketMap: estimating home values from county tax records
 
-**Stack:** Python, pandas, LightGBM, matplotlib. The web app is plain JavaScript and runs entirely in the browser.
-**Code:** [repository](https://github.com/sahasreddye-sys/CAC26) · **Live app:** [open](https://sahasreddye-sys.github.io/CAC26/) · **Notebook:** `housing_model_v2.ipynb`
+- **Stack:** Python, pandas, LightGBM, matplotlib. The web app is plain JavaScript and runs in the browser.
+- **Links:** [repository](https://github.com/sahasreddye-sys/CAC26) · [live app](https://sahasreddye-sys.github.io/CAC26/) · notebook `housing_model_v2.ipynb`
+{: .meta}
 
 ### What it is
 
@@ -27,6 +29,12 @@ The target is the county's assessed value, not a sale price. Forsyth has no open
 
 ![Map of estimated values]({{ '/images/housing-app-map.png' | relative_url }})
 *Parcels shaded by estimate in the app.*
+
+![Distribution of county values and value against building size]({{ '/images/housing-value-distribution.png' | relative_url }})
+*Assessed values are right-skewed, so the model works on the log scale. Median is about $619,000. Value rises steadily with building size.*
+
+![County value by location and by construction quality class]({{ '/images/housing-map-quality.png' | relative_url }})
+*Where values are high, and how value climbs with the county's construction quality grade. Location and quality are both inputs.*
 
 ### Model
 
@@ -77,7 +85,13 @@ Each home's estimate is broken into per-feature contributions, so the detail pag
 ![Feature effects and error map]({{ '/images/housing-importance-error-map.png' | relative_url }})
 *Average effect of each input, and where the model over- or under-shoots (red: too high, blue: too low).*
 
+![How estimates change with size and age]({{ '/images/housing-effects.png' | relative_url }})
+*Each point is a home. Estimates rise almost linearly with building size. Age pulls them down gently, with a cluster of brand-new homes near zero years that the model has trouble with.*
+
 ### The app
+
+![Search filters and county summary in the app]({{ '/images/housing-app-filters.png' | relative_url }})
+*Filters, school zones and the county summary. The summary reports the same error and range as the notebook.*
 
 - Estimates for all homes ship as a compressed JSON file, so there is no server and nothing a user types leaves the browser.
 - Every number the planner uses that the family does not type in (mortgage rate, loan length, tax and insurance assumptions, the sale-price markup) sits in one `planner-config.json` with a source and an as-of date.
