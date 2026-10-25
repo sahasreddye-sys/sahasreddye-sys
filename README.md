@@ -1,5 +1,5 @@
-# Hi, I'm Sahas
+# Data science projects
 
-High school student in Georgia. I like building things with data and machine learning.
+Four machine learning projects with write-ups: home value estimation, IPL match prediction, temperature forecasting and credit card fraud detection.
 
-My data science projects are listed at https://sahasreddye-sys.github.io/sahasreddye-sys/
+Site: https://sahasreddye-sys.github.io/sahasreddye-sys/

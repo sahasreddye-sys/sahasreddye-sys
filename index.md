@@ -1,49 +1,41 @@
 ## Data Science Projects
 
----
-
-### [Forsyth MarketMap](https://github.com/sahasreddye-sys/CAC26)
-
-A home budget planner for Forsyth County, GA. You enter income, debts and savings, and it shows which homes fit and how each estimate was reached.
-
-- LightGBM (600 trees, 5-fold cross-validation) trained on log assessed value from the 2025 county tax assessor parcel records
-- SHAP values show which features pushed a home's estimate up or down
-- It predicts assessed value, not sale price, because the open data has no Forsyth sale prices
-- Runs in the browser, and it is not financial advice
-
-[Live site](https://sahasreddye-sys.github.io/CAC26/) · [Code](https://github.com/sahasreddye-sys/CAC26)
+Four projects, each with the data, the method, the results, and what did not work.
 
 ---
 
-### [IPL Live Predictor](https://github.com/sahasreddye-sys/ipl-predictor-2026)
+### [Home value estimator]({{ '/projects/home-value-estimator' | relative_url }})
 
-A Colab notebook that predicts IPL match outcomes. It rebuilds the points table, batting and bowling stats and venue bias from Cricsheet ball-by-ball data each time it runs.
+Estimates the assessed value of about 80,000 homes from county tax records, with an 80% range and per-feature explanations. LightGBM on log value, checked with out-of-fold predictions, held-out neighborhoods, and real sale prices.
 
-- Six classifiers (logistic regression, random forest, gradient boosting, XGBoost, CatBoost, LightGBM) combined by weighted vote
-- Features include toss, venue bias, head-to-head record, NRR difference and a team strength index
-- Monte Carlo simulation (50,000 runs) for playoff and title odds
-- Venues with fewer than 8 past matches fall back to a neutral bias
-
-[Code](https://github.com/sahasreddye-sys/ipl-predictor-2026)
+<a href="{{ '/projects/home-value-estimator' | relative_url }}"><img src="{{ '/images/housing-app-budget.png' | relative_url }}" alt="Budget screen of the home planner"/></a>
 
 ---
 
-### [Weather Intelligence](https://github.com/sahasreddye-sys/weather-prediction-model)
+### [IPL match predictor]({{ '/projects/ipl-match-predictor' | relative_url }})
 
-A weather dashboard with a regression model that is trained in the browser.
+Rebuilds standings and player statistics from ball-by-ball data, trains six classifiers on past matches, and simulates the playoffs 50,000 times. The write-up covers why most of the models are at chance level.
 
-[Live site](https://sahasreddye-sys.github.io/weather-prediction-model/) · [Code](https://github.com/sahasreddye-sys/weather-prediction-model)
+<a href="{{ '/projects/ipl-match-predictor' | relative_url }}"><img src="{{ '/images/ipl-monte-carlo.png' | relative_url }}" alt="Title odds from the Monte Carlo simulation"/></a>
 
 ---
 
-### [Fraud Detection Case File](https://github.com/sahasreddye-sys/fraud-detector)
+### [Weather forecast model]({{ '/projects/weather-forecast-model' | relative_url }})
 
-A write-up of a credit card fraud detection project, as a single page.
+Predicts tomorrow's mean temperature. Six models compared in a notebook, then a linear regression solved in the browser for any city. Time-ordered validation.
 
-[Live site](https://sahasreddye-sys.github.io/fraud-detector/) · [Code](https://github.com/sahasreddye-sys/fraud-detector)
+<a href="{{ '/projects/weather-forecast-model' | relative_url }}"><img src="{{ '/images/weather-model-comparison.png' | relative_url }}" alt="Comparison of six regression models"/></a>
+
+---
+
+### [Credit card fraud detection]({{ '/projects/fraud-detection' | relative_url }})
+
+Fraud is 0.17% of 284,807 transactions. Time-ordered split, tuned gradient boosting, calibration, a cost-based threshold, and SHAP explanations. Includes a cross-validation result I could not yet explain.
+
+<a href="{{ '/projects/fraud-detection' | relative_url }}"><img src="{{ '/images/fraud-roc-pr.png' | relative_url }}" alt="ROC and precision-recall curves"/></a>
 
 ---
 
 ### Tools
 
-Python, pandas, scikit-learn, XGBoost, LightGBM, SHAP, Jupyter and Colab
+Python, pandas, NumPy, scikit-learn, LightGBM, XGBoost, CatBoost, SHAP, Optuna, matplotlib, Plotly, Jupyter and Colab. JavaScript for the web apps.

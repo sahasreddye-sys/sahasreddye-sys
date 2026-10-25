@@ -1,8 +1,6 @@
-title: Sahas
+title: Data Science Portfolio
 description: >
-  High school student in Georgia. I like building things with data and machine learning, and I'm working toward a computer science degree with an interest in theoretical CS.
-  <br><br>
-  <a href="https://github.com/sahasreddye-sys">GitHub</a>
+  Machine learning and data analysis projects, with the data, methods, results and limits written out.
 
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
