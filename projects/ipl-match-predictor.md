@@ -1,5 +1,6 @@
 ---
 layout: default
+charts: true
 title: IPL match predictor
 ---
 
@@ -56,6 +57,12 @@ Six classifiers on a 972 / 244 train/test split, with 5-fold cross-validation on
 *Test accuracy, AUC-ROC and 5-fold CV accuracy for each model. The dotted line is 50%.*
 
 ### Results, stated plainly
+
+<figure class="chart">
+<div class="chart-box"><canvas data-chart="ipl-accuracy" role="img" aria-label="Test and cross-validation accuracy by model"></canvas></div>
+<figcaption>Interactive version of the table below. Only logistic regression sits clearly above 50%. The axis starts at 40%.</figcaption>
+</figure>
+
 
 | Model | Test accuracy | AUC | 5-fold CV |
 |---|---|---|---|

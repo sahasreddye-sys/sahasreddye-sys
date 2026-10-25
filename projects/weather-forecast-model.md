@@ -1,5 +1,6 @@
 ---
 layout: default
+charts: true
 title: Weather forecast model
 ---
 
@@ -53,6 +54,12 @@ I compared six models in the notebook on the same split.
 
 ![Model comparison]({{ '/images/weather-model-comparison.png' | relative_url }})
 *Test MAE for six models, with R² in brackets. Values from the notebook's comparison table.*
+
+<figure class="chart">
+<div class="chart-box"><canvas data-chart="weather-mae" role="img" aria-label="Test MAE for six regression models"></canvas></div>
+<figcaption>Same numbers, interactive: hover a bar for its MAE and R². The axis starts at 3°F, so the gaps look bigger than they are; the whole spread is about half a degree.</figcaption>
+</figure>
+
 
 Plain linear regression was best (MAE 3.29°F, RMSE 4.32°F, R² 0.828). Ridge was nearly the same, and the tree ensembles and SVR were worse. With 579 training rows and strongly seasonal data, the flexible models have little to gain and more to overfit, so I used linear regression in the app.
 

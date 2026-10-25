@@ -36,6 +36,13 @@
          {{ content }}
       </section>
    </div>
+   {% if page.charts %}
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+   <script src="{{ "/assets/js/charts.js" | relative_url }}"></script>
+   {% endif %}
+   {% if page.embed %}
+   <script src="{{ "/assets/js/embed.js" | relative_url }}"></script>
+   {% endif %}
    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
 </body>
 </html>

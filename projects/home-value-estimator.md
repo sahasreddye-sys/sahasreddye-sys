@@ -1,5 +1,6 @@
 ---
 layout: default
+embed: true
 title: Home value estimator
 ---
 
@@ -89,6 +90,15 @@ Each home's estimate is broken into per-feature contributions, so the detail pag
 *Each point is a home. Estimates rise almost linearly with building size. Age pulls them down gently, with a cluster of brand-new homes near zero years that the model has trouble with.*
 
 ### The app
+
+<div class="embed" data-src="https://sahasreddye-sys.github.io/CAC26/" data-title="Forsyth MarketMap, live app">
+<div class="embed-body">
+<p>The real app runs here, not a recording. It loads only when you press the button.</p>
+<button type="button">Load the live app</button>
+<a href="https://sahasreddye-sys.github.io/CAC26/">Open it in its own tab</a>
+</div>
+</div>
+
 
 ![Search filters and county summary in the app]({{ '/images/housing-app-filters.png' | relative_url }})
 *Filters, school zones and the county summary. The summary reports the same error and range as the notebook.*

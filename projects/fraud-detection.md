@@ -1,5 +1,6 @@
 ---
 layout: default
+charts: true
 title: Credit card fraud detection
 ---
 
@@ -76,6 +77,11 @@ The SHAP summary below shows which features move individual predictions. `V4` an
 | CatBoost | 0.771 |
 | Average of the three, each isotonic-calibrated | 0.765 |
 | Ensemble plus 10% Isolation Forest score | 0.761 |
+
+<figure class="chart">
+<div class="chart-box"><canvas data-chart="fraud-prauc" role="img" aria-label="Test PR-AUC by model"></canvas></div>
+<figcaption>The table as a chart. Hover for exact values. The axis starts at 0.6, and with 75 fraud cases the differences among the tuned models are within noise.</figcaption>
+</figure>
 
 Two results were not what I expected. The Isolation Forest alone scored 0.038, nearly nothing, and adding it to the ensemble made it slightly worse. And averaging three models did not beat the individual models on this test set. With 75 fraud cases, differences of a few thousandths are within noise, so I would not claim one model is better than another.
 
